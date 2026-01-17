@@ -63,6 +63,7 @@ while True:
 
                 if oz in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]:
                     i_hate_python(1, oz)
+                    break
                 else:
                     print("Число должно быть меньше или равно 20!")
 
@@ -484,7 +485,7 @@ while True:
             print("Пока не готово, сорри)")
 
         elif vvv == "3":
-            print("UnSa - Программа для изменения данных внутри сохранения Undertale. Версия:1.3. Создано Chitora (https://www.youtube.com/@ChitoraMusic). Связаться со мной:chitoramusic (Discord). Исходный код:https://github.com/cucuberstwo-commits/UnSa")
+            print("UnSa - Программа для изменения данных внутри сохранения Undertale. Версия:1.3.1. Создано Chitora (https://www.youtube.com/@ChitoraMusic). Связаться со мной:chitoramusic (Discord). Исходный код:https://github.com/cucuberstwo-commits/UnSa")
 
             aaarrrtt = '''               ::::
                                         +%%=
