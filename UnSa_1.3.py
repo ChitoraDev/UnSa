@@ -2,6 +2,7 @@ import subprocess
 import os
 import shutil
 from pyshortcuts import make_shortcut
+import datetime
 
 def zagolovok_okna(nazvanie_okna):
     os.system(f"title {nazvanie_okna}")
@@ -9,6 +10,8 @@ def zagolovok_okna(nazvanie_okna):
 zagolovok_okna("UnSa")
 
 ic = os.path.join(os.getcwd(), 'icon.ico')
+
+
 
 while True:
     print("Добро пожаловать в UnSa! Программа для редактирования файла сохранения Undertale.")
@@ -500,7 +503,7 @@ while True:
                     print("Число должно быть меньше или равно 3!")
                     
     elif rezhim == "4":
-        print("Создать ярлык на рабочем столе - 1. Язык - 2. О программе - 3.")
+        print("Создать ярлык на рабочем столе - 1. О программе- 2.")
 
         vvv = input("Выберите номер команды:")
 
@@ -510,11 +513,8 @@ while True:
 
             make_shortcut(script=pp, name=imya_yarlika, terminal=True, desktop=True, icon=ic)
 
-        elif vvv == "2":
-            print("Пока не готово, сорри)")
-
-        elif vvv == "3":
-            print("UnSa - Программа для изменения данных внутри сохранения Undertale. Версия:1.3.1. Создано Chitora (https://www.youtube.com/@ChitoraMusic). Связаться со мной:chitoramusic (Discord). Исходный код:https://github.com/cucuberstwo-commits/UnSa")
+        elif vvv == "25":
+            print("UnSa - Программа для изменения данных внутри сохранения Undertale. Версия:1.3.3. Создано Chitora (https://www.youtube.com/@ChitoraMusic). Связаться со мной:chitoramusic (Discord). Исходный код:https://github.com/cucuberstwo-commits/UnSa")
 
             aaarrrtt = '''               ::::
                                         +%%=
@@ -546,16 +546,29 @@ while True:
     elif rezhim == "5":
             print("Экспорт - 1. Импорт - 2.")
             v = input("Выберите, что хотите сделать с файлами сохранения:")
-            arh = 'Export Save'
+            schs = datetime.datetime.now()
+            schsf = schs.strftime("%d.%m.%Y")
+            arhnn = schsf
+            pap = 'Экспортированные Архивы'
+            if not os.path.exists(pap):
+                os.makedirs(pap)
+
+            arh = os.path.join(pap, arhnn)
 
             if v == "1":
 
-                shutil.make_archive(arh, 'zip', save_papka)
+                shutil.make_archive(arhnn, 'zip', save_papka)
                 print("Сохранение экспортировано!")
 
             elif v == "2":
+                print("Вы уверены, что хотите импортировать сохранение? Если вы это сделаете, то потеряете предыдущее! Ипортировать - 1. Отказаться - 2.")
+                proi = input("Введите номер команды:")
 
-                shutil.unpack_archive(arh, save_papka)
+                if proi == "1":
+                    shutil.unpack_archive(arh, save_papka)
+
+                else:
+                    exit()
 
 
             
